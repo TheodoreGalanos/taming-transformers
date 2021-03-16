@@ -28,7 +28,7 @@ class LayoutsTrain(Base):
     def __init__(self, size, keys=None):
         super().__init__()
         root = "data/layouts/train"
-        with open("data/layoutstrain.txt", "r") as f:
+        with open("data/layouts/layoutstrain.txt", "r") as f:
             relpaths = f.read().splitlines()
         paths = [os.path.join(root, relpath) for relpath in relpaths]
         self.data = ImagePaths(paths=paths, size=size, random_crop=False)
@@ -39,7 +39,7 @@ class LayoutsValidation(Base):
     def __init__(self, size, keys=None):
         super().__init__()
         root = "data/layouts/test"
-        with open("data/layoutstest.txt", "r") as f:
+        with open("data/layouts/layoutstest.txt", "r") as f:
             relpaths = f.read().splitlines()
         paths = [os.path.join(root, relpath) for relpath in relpaths]
         self.data = ImagePaths(paths=paths, size=size, random_crop=False)

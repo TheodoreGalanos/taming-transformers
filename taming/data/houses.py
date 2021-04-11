@@ -28,7 +28,7 @@ class HousesTrain(Base):
     def __init__(self, size, keys=None):
         super().__init__()
         root = "/content/houses/My_HouseGan"
-        with open("/content/train.txt", "r") as f:
+        with open("/content/taming-transformers/data/houses_train.txt", "r") as f:
             relpaths = f.read().splitlines()
         paths = [os.path.join(root, relpath) for relpath in relpaths]
         self.data = ImagePaths(paths=paths, size=size, random_crop=False)
@@ -39,7 +39,7 @@ class HousesValidation(Base):
     def __init__(self, size, keys=None):
         super().__init__()
         root = "/content/houses/_MyHouseGan/"
-        with open("/content/validation.txt", "r") as f:
+        with open("/content/taming-transformers/data/houses_valid.txt", "r") as f:
             relpaths = f.read().splitlines()
         paths = [os.path.join(root, relpath) for relpath in relpaths]
         self.data = ImagePaths(paths=paths, size=size, random_crop=False)

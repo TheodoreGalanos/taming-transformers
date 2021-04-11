@@ -3,7 +3,7 @@ model:
   target: taming.models.vqgan.VQModel
   params:
     embed_dim: 256
-    n_embed: 512
+    n_embed: 256
     ddconfig:
       double_z: False
       z_channels: 256
@@ -28,7 +28,7 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 3
+    batch_size: 16
     num_workers: 8
     train:
       target: taming.data.mario.HousesTrain
